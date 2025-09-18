@@ -5,7 +5,7 @@ from insightface.app import FaceAnalysis
 import os
 
 # Inicializa modelo
-app = FaceAnalysis(name='buffalo_l')
+app = FaceAnalysis(name='buffalo_s')
 app.prepare(ctx_id=0)  # CPU=-1 para usar CPU, 0 para GPU se disponível
 
 DB_FILE = "faces_db.json"
@@ -55,7 +55,7 @@ def recognize_face(embedding, threshold=0.5):
 # ------------------- Loop principal -------------------
 
 cap = cv2.VideoCapture(0)  # webcam
-cv2.namedWindow('Video com Detecção de Rostos', cv2.WINDOW_NORMAL)
+# cv2.namedWindow('Video com Detecção de Rostos', cv2.WINDOW_NORMAL)
 
 print("Pressione 'c' para cadastrar rosto, 'q' para sair.")
 
