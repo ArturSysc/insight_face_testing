@@ -6,6 +6,8 @@ face_cascade = cv2.CascadeClassifier(cv2.data.haarcascades + 'haarcascade_fronta
 # Iniciar captura de vídeo (0 para câmera padrão ou caminho do arquivo para vídeos)
 cap = cv2.VideoCapture(0)
 
+cv2.namedWindow('Video com Detecção de Rostos', cv2.WINDOW_NORMAL)
+
 while True:
     # Captura frame a frame
     ret, frame = cap.read()
