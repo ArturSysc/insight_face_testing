@@ -9,7 +9,7 @@ import requests
 # ------------------- Configurações -------------------
 
 DB_FILE = "faces_db.json"
-API_URL_RECOGNITION = "http://192.168.0.29:8000/recognitions"  # endpoint para enviar nomes
+API_URL_RECOGNITION = "http://localhost:8000/recognitions"  # endpoint para enviar nomes
 THRESHOLD = 0.5  # limiar de similaridade para reconhecer rosto
 
 SEND_INTERVAL = 5  # segundos entre envios por pessoa
@@ -57,6 +57,9 @@ def recognize_face(embedding, threshold=THRESHOLD):
 
 def post_name_only(name):
     """Envia apenas o nome para a API"""
+    if name == "desconhecido":
+        return
+        
     try:
         data = {"name": name, "timestamp": int(time.time())}
         response = requests.post(API_URL_RECOGNITION, json=data, timeout=2)
