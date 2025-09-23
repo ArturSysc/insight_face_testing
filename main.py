@@ -9,7 +9,7 @@ import requests
 # ------------------- Configurações -------------------
 
 DB_FILE = "faces_db.json"
-API_URL_RECOGNITION = "http://localhost:8000/recognitions"  # endpoint para enviar nomes
+API_URL_RECOGNITION = "http://192.168.0.172:8000/recognitions"  # endpoint para enviar nomes
 THRESHOLD = 0.5  # limiar de similaridade para reconhecer rosto
 
 SEND_INTERVAL = 5  # segundos entre envios por pessoa
